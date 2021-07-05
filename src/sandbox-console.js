@@ -62,7 +62,7 @@ var Sandbox = {
 		// and circular objects, and all object methods
 		stringify : function(obj) {
 			try {
-				return JSON.decycle(obj);
+				return JSON.stringify(JSON.decycle(obj));
 			} catch(e) {
 				return obj.toString();
 			}
