@@ -19,7 +19,8 @@ var Sandbox = {
 			fallback : true // if true, use native `eval` if the iframe method fails
 		},
 		initialize: function() {
-			_.bindAll(this);
+      console.log(this);
+			_.bindAll(this, _.functions(this));
 
 			// Attempt to fetch the Model from localStorage
 			this.fetch();
@@ -156,7 +157,7 @@ var Sandbox = {
 	 */
 	View : Backbone.View.extend({
 		initialize: function(opts) {
-			_.bindAll(this);
+			_.bindAll(this, _.functions(this));
 
 			// Set up the history state (the up/down access to command history)
 			this.historyState = this.model.get('history').length;
